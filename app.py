@@ -14,7 +14,7 @@ import datetime
 #    load_dotenv()
 
 # for AWS, do not run this because not using .env
-#os.environ["GROQ_API_KEY"] = ""
+os.environ["GROQ_API_KEY"] = ""
 #os.environ["GROQ_API_KEY"] = os.environ.get('GROQ_API_KEY')
 
 client = Groq()
@@ -71,6 +71,10 @@ def llama_result():
 @app.route("/paynow",methods=["GET","POST"])
 def paynow():
     return(render_template("paynow.html"))
+
+@app.route("/agenticAI",methods=["GET","POST"])
+def agenticAI():
+    return(render_template("agenticAI.html"))
 
 @app.route("/userlog",methods=["GET","POST"])
 def userlog():
